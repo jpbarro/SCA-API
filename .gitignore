@@ -299,3 +299,5 @@ dist/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+file::memory:
