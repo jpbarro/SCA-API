@@ -1,45 +1,45 @@
-Spy Cat Agency (SCA) API
+# Spy Cat Agency (SCA) API
 This is the backend API for the Spy Cat Agency (SCA), a system designed to manage spy cats, their missions, and the targets they are assigned to. It is a complete CRUD application built with FastAPI, PostgreSQL, and SQLAlchemy, featuring data validation, a full test suite, and integration with a third-party service.
 
-Features
-Cat Management: Create, list, update, and remove spy cats from the agency.
+## Features
+- Cat Management: Create, list, update, and remove spy cats from the agency.
 
-Mission Management: Create missions with 1-3 targets, assign cats to missions, and delete unassigned missions.
+- Mission Management: Create missions with 1-3 targets, assign cats to missions, and delete unassigned missions.
 
-Target Updates: Update a target's notes and mark it as complete.
+- Target Updates: Update a target's notes and mark it as complete.
 
-Automatic Mission Completion: Missions are automatically marked as complete once all their associated targets are completed.
+- Automatic Mission Completion: Missions are automatically marked as complete once all their associated targets are completed.
 
-Data Validation:
+- Data Validation:
 
-Validates request bodies to ensure data integrity.
+  - Validates request bodies to ensure data integrity.
 
-Validates cat breeds against the official TheCatAPI.
+  - Validates cat breeds against the official TheCatAPI.
 
-Enforces business rules (e.g., a cat can only be on one mission at a time).
+  - Enforces business rules (e.g., a cat can only be on one mission at a time).
 
-Database Migrations: Uses Alembic to manage database schema changes.
+- Database Migrations: Uses Alembic to manage database schema changes.
 
-Comprehensive Testing: Includes a full test suite using Pytest to ensure API reliability.
+- Comprehensive Testing: Includes a full test suite using Pytest to ensure API reliability.
 
-Technologies Used
-Backend Framework: FastAPI
+## Technologies Used
+- Backend Framework: FastAPI
 
-Database: PostgreSQL
+- Database: PostgreSQL
 
-ORM: SQLAlchemy
+- ORM: SQLAlchemy
 
-Database Migrations: Alembic
+- Database Migrations: Alembic
 
-Data Validation: Pydantic
+- Data Validation: Pydantic
 
-Testing: Pytest
+- Testing: Pytest
 
-HTTP Client: HTTPX
+- HTTP Client: HTTPX
 
-ASGI Server: Uvicorn
+- ASGI Server: Uvicorn
 
-Getting Started
+## Getting Started
 Follow these instructions to get the project up and running on your local machine.
 
 1. Prerequisites
@@ -59,19 +59,21 @@ cd spy_cat_agency
 
 Create and activate a virtual environment:
 
+```
 # Create the environment
-```
+
 python -m venv venv
-```
+
 
 # Activate it (macOS/Linux)
-```
+
 source venv/bin/activate
-```
+
 
 # Activate it (Windows)
-```
+
 .\venv\Scripts\activate
+
 ```
 
 Install dependencies:
@@ -83,9 +85,11 @@ pip install -r requirements.txt
 Configure environment variables:
 Create a file named .env in the project root and add the following content. Replace the placeholder values with your actual database credentials and your API key.
 
+```
 # .env
 DATABASE_URL="postgresql://YOUR_POSTGRES_USER:YOUR_POSTGRES_PASSWORD@localhost/spy_cat_db"
 THECATAPI_API_KEY="your_thecatapi_key_here"
+```
 
 Create the PostgreSQL database:
 Make sure to create a database with the name you specified in your DATABASE_URL (e.g., spy_cat_db).
@@ -93,13 +97,11 @@ Make sure to create a database with the name you specified in your DATABASE_URL 
 3. Run Database Migrations
 Before running the application for the first time, you need to create the database tables using Alembic.
 
+```
 # Generate the initial migration script
-```
 alembic revision --autogenerate -m "Initial migration with cats, missions, targets"
-```
 
 # Apply the migration to the database
-```
 alembic upgrade head
 ```
 
