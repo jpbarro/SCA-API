@@ -126,3 +126,7 @@ From the project root directory, simply run:
 ```
 pytest
 ```
+
+## Project Postman collection
+
+[Collection](https://www.postman.com/clipping-3740/jp-public/collection/skjgb1k/sca-api?action=share&creator=25652929)
